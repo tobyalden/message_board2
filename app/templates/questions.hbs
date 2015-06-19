@@ -1,0 +1,35 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title text-center">Flaw Overstock</h1>
+  </div>
+  <div class="panel-body">
+
+    <label for="question-list"><u>Questions:</u></label>
+    <ol name="question-list">
+      {{#each model as |question|}}
+       <!-- <li>{{#link-to 'question' id}}{{title}}{{/link-to}} (asked by {{author}})</li> -->
+       <li>{{question.title}} (asked by {{question.author}})</li>
+     {{/each}}
+    </ol>
+
+    <label for="add-question-form"><u>Ask a Question:</u></label>
+    <form name="add-question-form">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        {{input name="title" class="form-control" value=title}}
+      </div>
+
+      <div class="form-group">
+        <label for="author">Author:</label>
+        {{input name="author" class="form-control" value=author}}
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description:</label>
+        {{input name="description" class="form-control" value=description}}
+      </div>
+
+      <button class='btn btn-success' {{action 'addQuestion'}}>Add Question</button>
+    </form>
+  </div>
+</div>
