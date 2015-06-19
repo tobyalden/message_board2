@@ -3,7 +3,7 @@
     <h1 class="panel-title text-center">{{model.title}} (Asked by {{model.author}})</h1>
   </div>
   <div class="panel-body">
-    <!-- {{#if isEditing}}
+    {{#if isEditing}}
 
       <form>
         <div class="form-group">
@@ -24,7 +24,7 @@
 
     {{/if}}
 
-    <h3>Answers:</h3>
+    <!-- <h3>Answers:</h3>
     <ol>
       {{#each answers}}
        <li>{{description}} [<a href="#" {{action 'deleteAnswer' this}}>X</a>]</li>
