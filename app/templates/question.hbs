@@ -24,10 +24,10 @@
 
     {{/if}}
 
-    <!-- <h3>Answers:</h3>
+    <h3>Answers:</h3>
     <ol>
-      {{#each answers}}
-       <li>{{description}} [<a href="#" {{action 'deleteAnswer' this}}>X</a>]</li>
+      {{#each model.answers as |answer|}}
+       <li>{{answer.description}} [<a href="#" {{action 'deleteAnswer' this}}>X</a>]</li>
      {{/each}}
     </ol>
 
@@ -35,7 +35,7 @@
       <button class='btn btn-warning' {{action 'addAnswer'}}>Answer Question</button>
     {{/if}}
 
-    {{outlet}} -->
+    {{outlet}}
 
     <button class='btn btn-default' {{action 'backToQuestions'}}>Back to Questions</button>
 

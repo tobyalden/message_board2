@@ -24,20 +24,20 @@ export default Ember.Controller.extend({
        this.transitionToRoute('questions');
      },
 
-    //  addAnswer: function() {
-    //    this.set('showAnswerButton', false);
-    //    this.transitionToRoute('answers');
-    //  },
-     //
-    //  deleteAnswer: function(answer) {
-    //    var question = this.get('model');
-    //    question.get('answers').removeObject(answer);
-    //    question.save();
-     //
-    //    answer.deleteRecord();
-    //    answer.save();
-    //    this.transitionToRoute('question', this.get('id'));
-    //  },
+     addAnswer: function() {
+       this.set('showAnswerButton', false);
+       this.transitionToRoute('question.answers');
+     },
+
+     deleteAnswer: function(answer) {
+       var question = this.get('model');
+       question.get('answers').removeObject(answer);
+       question.save();
+
+       answer.deleteRecord();
+       answer.save();
+       this.transitionToRoute('question', this.get('id'));
+     },
 
      backToQuestions: function() {
        this.set('showAnswerButton', true);
