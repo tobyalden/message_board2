@@ -1,14 +1,13 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h1 class="panel-title text-center">Flaw Overstock</h1>
+    <h1 class="panel-title text-center">Flaw Overstock II</h1>
   </div>
   <div class="panel-body">
 
     <label for="question-list"><u>Questions:</u></label>
     <ol name="question-list">
       {{#each model as |question|}}
-       <!-- <li>{{#link-to 'question' id}}{{title}}{{/link-to}} (asked by {{author}})</li> -->
-       <li>{{question.title}} (asked by {{question.author}})</li>
+       <li>{{#link-to 'question' question.id}}{{question.title}}{{/link-to}} (asked by {{question.author}})</li>
      {{/each}}
     </ol>
 

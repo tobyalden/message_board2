@@ -1,0 +1,43 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title text-center">{{model.title}} (Asked by {{model.author}})</h1>
+  </div>
+  <div class="panel-body">
+    <!-- {{#if isEditing}}
+
+      <form>
+        <div class="form-group">
+          <label for="description">New Description:</label>
+          {{input name="description" class="form-control" value=description}}
+        </div>
+        <button class='btn btn-success' {{action 'finishEditing'}}>Finish Editing</button>
+      </form>
+
+    {{else}}
+
+      <p>
+        {{model.description}}
+      </p>
+
+      <button class='btn btn-info' {{action 'editDescription'}}>Edit Description</button>
+      <button class='btn btn-danger' {{action 'deleteQuestion'}}>Delete Question</button>
+
+    {{/if}}
+
+    <h3>Answers:</h3>
+    <ol>
+      {{#each answers}}
+       <li>{{description}} [<a href="#" {{action 'deleteAnswer' this}}>X</a>]</li>
+     {{/each}}
+    </ol>
+
+    {{#if showAnswerButton}}
+      <button class='btn btn-warning' {{action 'addAnswer'}}>Answer Question</button>
+    {{/if}}
+
+    {{outlet}} -->
+
+    <button class='btn btn-default' {{action 'backToQuestions'}}>Back to Questions</button>
+
+  </div>
+</div>
