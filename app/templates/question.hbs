@@ -27,7 +27,7 @@
     <h3>Answers:</h3>
     <ol>
       {{#each model.answers as |answer|}}
-       <li>{{answer.description}} [<a href="#" {{action 'deleteAnswer' this}}>X</a>]</li>
+       <li>{{answer.description}} [<a href="#" {{action 'deleteAnswer' answer}}>X</a>]</li>
      {{/each}}
     </ol>
 

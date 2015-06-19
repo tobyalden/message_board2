@@ -18,26 +18,26 @@ export default Ember.Controller.extend({
       },
 
       deleteQuestion: function () {
-       var question = this.get('model');
-       question.deleteRecord();
-       question.save();
-       this.transitionToRoute('questions');
+        var question = this.get('model');
+        question.deleteRecord();
+        question.save();
+        this.transitionToRoute('questions');
+      },
+
+      addAnswer: function() {
+        this.set('showAnswerButton', false);
+        this.transitionToRoute('question.answers');
      },
 
-     addAnswer: function() {
-       this.set('showAnswerButton', false);
-       this.transitionToRoute('question.answers');
-     },
+      deleteAnswer: function(answer) {
+        var question = this.get('model');
+        question.get('answers').removeObject(answer);
+        question.save();
 
-     deleteAnswer: function(answer) {
-       var question = this.get('model');
-       question.get('answers').removeObject(answer);
-       question.save();
-
-       answer.deleteRecord();
-       answer.save();
-       this.transitionToRoute('question', this.get('id'));
-     },
+        answer.deleteRecord();
+        answer.save();
+        this.transitionToRoute('question', this.get('id'));
+      },
 
      backToQuestions: function() {
        this.set('showAnswerButton', true);
